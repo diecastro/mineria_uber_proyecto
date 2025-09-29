@@ -223,3 +223,4 @@ Temporary Items
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,macos,pycharm
+/data/~$Base de datos UBER.xlsx

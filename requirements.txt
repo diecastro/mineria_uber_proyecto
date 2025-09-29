@@ -7,3 +7,4 @@ seaborn~=0.13.2
 xgboost~=3.0.5
 imbalanced-learn~=0.14.0
 catboost~=1.2.8
+ydata-profiling
