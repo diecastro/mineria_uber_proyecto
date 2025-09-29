@@ -323,4 +323,5 @@ print(metrics.classification_report(y_true=Y_test, y_pred=Y_pred, target_names=l
 #%%
 filename = 'Modelo_Regresion_UBER.pkl'
 variables = X.columns._values
-pickle.dump([model_gbc, variables, min_max_scaler], open(filename, 'wb'))
+classes = labelencoder.classes_
+pickle.dump([model_gbc, variables, min_max_scaler, classes], open(filename, 'wb'))
