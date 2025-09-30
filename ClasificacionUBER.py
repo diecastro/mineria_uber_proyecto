@@ -4,7 +4,7 @@ import pandas as pd #manipulación dataframes
 import numpy as np #matrices y vectores
 import matplotlib.pyplot as plt #graficación
 #%%
-data=pd.read_excel("./data/Base de datos UBER.xlsx")
+data=pd.read_excel("./data/Base de datos VIAJES UBER.xlsx")
 data.head() #Listar las primeras filas de data
 #%%
 data.info()
@@ -94,10 +94,8 @@ data['Vehicle Type'].value_counts().plot(kind='bar')
 #%%
 data['Booking Status'].value_counts().plot(kind='pie', autopct='%.0f%%')
 #%%
-!pip install ydata-profiling
-#%%
 # Cargar librería para Profiling
-from pandas_profiling import ProfileReport
+from ydata_profiling import ProfileReport
 #%%
 profile_data=ProfileReport(data, minimal=False) # minimal=True
 profile_data
