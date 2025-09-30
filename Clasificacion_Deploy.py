@@ -33,8 +33,8 @@ def load_model():
 
 modelTree, modelKnn, modelNN, modelSVM, labelencoder, variables, min_max_scaler = load_model()
 
-st.title("🚕 Predicción de 'Booking Status' (Uber)")
-st.caption("Despliegue rápido del modelo entrenado con SVM")
+st.title("🚕 Predicción de 'Booking Status' (Uber) Clasificación")
+st.caption("Despliegue del modelo entrenado con SVM")
 
 
 def discretizar_hora(hora):
@@ -104,23 +104,19 @@ st.header("📥 Ingresar datos futuros")
 mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)
 
 if mode == "📤 Subir CSV":
-    file = st.file_uploader("Cargar CSV con el mismo esquema original", type=["csv", "xlsx","xls"])
+    file = st.file_uploader("Cargar Archivo con el mismo esquema original", type=["csv", "xlsx","xls"])
     if file is not None:
         try:
-            # Intentar leer como Excel primero
             df_raw = pd.read_excel(file)
         except Exception:
             file.seek(0)
             try:
-                # Intentar CSV con UTF-8 y ; como separador
                 df_raw = pd.read_csv(file, sep=";", encoding="utf-8")
             except UnicodeDecodeError:
                 file.seek(0)
-                # Si falla, probar latin-1
                 df_raw = pd.read_csv(file, sep=";", encoding="latin-1")
             except Exception:
                 file.seek(0)
-                # Si ni siquiera con ; funciona, dejar que pandas detecte el separador
                 df_raw = pd.read_csv(file, sep=None, engine="python", encoding="latin-1")
         st.subheader("Vista previa")
         st.dataframe(df_raw.head())

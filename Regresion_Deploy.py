@@ -33,8 +33,8 @@ def load_model():
 
 model, variables, min_max_scaler, classes = load_model()
 
-st.title("🚕 Predicción de 'Booking Status' (Uber)")
-st.caption("Despliegue rápido del modelo entrenado con GradientBoostingClassifier (70/30).")
+st.title("🚕 Predicción de 'Booking Status' (Uber) Regresión")
+st.caption("Despliegue rápido del modelo entrenado con GradientBoostingClassifier")
 
 # -------------------------------
 # 2) Funciones de preparación
