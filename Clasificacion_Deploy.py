@@ -128,10 +128,22 @@ if mode == "📤 Subir Archivo":
                         proba = modelSVM.predict_proba(X)
                     except Exception:
                         proba = None
+
                 out = df_raw.copy()
-                out['Prediccion SVM'] = labelencoder.inverse_transform(y_pred)
+                try:
+                    out['Prediccion SVM'] = labelencoder.inverse_transform(y_pred)
+                except Exception:
+                    out['Prediccion SVM'] = y_pred
+
+                out = out.drop(
+                    ['Reason for cancelling by Customer', 'Driver Cancellation Reason', 'Incomplete Rides Reason'],
+                    axis=1, errors="ignore"
+                )
+                st.subheader("🔎 Resultado de la predicción")
+                st.dataframe(out)
+
                 csv = out.to_csv(index=False).encode("utf-8")
-                st.download_button("⬇️ Descargar resultados (CSV)", data=csv, file_name="predicciones_uber.csv",
+                st.download_button("⬇️ Descargar resultados (Excel)", data=csv, file_name="predicciones_uber.csv",
                                    mime="text/csv")
             except Exception as e:
                 st.error(f"Ocurrió un error prediciendo: {e}")
@@ -185,12 +197,25 @@ else:
                     proba = modelSVM.predict_proba(X)
                 except Exception:
                     proba = None
+
             out = df_single.copy()
-            out['Prediccion SVM'] = labelencoder.inverse_transform(y_pred)
+            try:
+                out['Prediccion SVM'] = labelencoder.inverse_transform(y_pred)
+            except Exception:
+                out['Prediccion SVM'] = y_pred
+
             out = out.drop(
-                ['Reason for cancelling by Customer', 'Driver Cancellation Reason', 'Incomplete Rides Reason'], axis=1)
+                ['Reason for cancelling by Customer', 'Driver Cancellation Reason', 'Incomplete Rides Reason'],
+                axis=1, errors="ignore"
+            )
+
+            st.subheader("🔎 Resultado de la predicción")
+            st.dataframe(out)
+            st.write("Shape:", out.shape)
+
             csv = out.to_csv(index=False).encode("utf-8")
-            st.download_button("⬇️ Descargar resultados (CSV)", data=csv, file_name="predicciones_uber.csv",
+            st.download_button("⬇️ Descargar resultados (Excel)", data=csv, file_name="predicciones_uber.csv",
                                mime="text/csv")
         except Exception as e:
             st.error(f"Ocurrió un error prediciendo: {e}")
+

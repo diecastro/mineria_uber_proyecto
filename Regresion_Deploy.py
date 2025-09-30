@@ -214,8 +214,8 @@ else:
                 except Exception:
                     proba = None
             st.success(f"Predicción: {classes[int(y_pred[0])]}")
-            if proba is not None:
-                st.write("Probabilidades por clase:")
-                st.json({classes[i]: float(p) for i, p in enumerate(proba[0])})
+            # if proba is not None:
+            #     st.write("Probabilidades por clase:")
+            #     st.json({classes[i]: float(p) for i, p in enumerate(proba[0])})
         except Exception as e:
             st.error(f"Ocurrió un error prediciendo: {e}")
