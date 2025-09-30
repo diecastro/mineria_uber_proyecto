@@ -211,10 +211,9 @@ else:
 
             st.subheader("🔎 Resultado de la predicción")
             st.dataframe(out)
-            st.write("Shape:", out.shape)
 
             csv = out.to_csv(index=False).encode("utf-8")
-            st.download_button("⬇️ Descargar resultados (Excel)", data=csv, file_name="predicciones_uber.csv",
+            st.download_button("⬇️ Descargar resultados)", data=csv, file_name="predicciones_uber.csv",
                                mime="text/csv")
         except Exception as e:
             st.error(f"Ocurrió un error prediciendo: {e}")
