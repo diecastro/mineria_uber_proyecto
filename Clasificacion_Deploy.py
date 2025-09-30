@@ -104,7 +104,7 @@ st.header("📥 Ingresar datos futuros")
 mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)
 
 if mode == "📤 Subir CSV":
-    file = st.file_uploader("Cargar CSV con el mismo esquema original", type=["csv", "xlsx"])
+    file = st.file_uploader("Cargar CSV con el mismo esquema original", type=["csv", "xlsx","xls"])
     if file is not None:
         try:
             # Intentar leer como Excel primero
