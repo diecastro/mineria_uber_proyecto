@@ -1,13 +1,19 @@
-﻿Date;Time;Vehicle Type;Avg VTAT;Avg CTAT;Cancelled Rides by Customer;Reason for cancelling by Customer;Cancelled Rides by Driver;Driver Cancellation Reason;Incomplete Rides;Incomplete Rides Reason;Booking Value;Ride Distance;Payment Method;Booking Status
-19/3/24;5:37 PM;Auto;12,1;0;No;No Report;No;No Report;No;No Report;136;6,56;UPI;
-14/9/24;12:49 PM;Go Sedan;0;0;No;No Report;No;No Report;No;No Report;0;0;No Report;
-16/12/24;7:06 PM;Auto;6,1;0;No;No Report;No;No Report;Si;Other Issue;135;10,36;Cash;
-14/6/24;4:24 PM;Auto;7,7;0;No;No Report;No;No Report;No;No Report;181;19,84;Cash;
-18/9/24;8:09 AM;Auto;0;0;No;No Report;No;No Report;No;No Report;0;0;No Report;
-25/6/24;10:44 PM;eBike;4,6;0;No;No Report;Si;PersoNo Reportl & Car related issues;No;No Report;0;0;No Report;
-11/9/24;7:29 PM;Go Mini;12,2;0;No;No Report;No;No Report;No;No Report;394;21,44;UPI;
-18/10/24;6:28 PM;Go Mini;14;0;No;No Report;No;No Report;No;No Report;836;39,55;UPI;
-7/6/24;3:05 PM;Auto;8,5;0;No;No Report;No;No Report;No;No Report;410;34,76;Uber Wallet;
-1/7/24;10:51 AM;Premier Sedan;5,6;0;No;No Report;No;No Report;No;No Report;401;21,97;UPI;
-15/12/24;3:08 PM;Go Sedan;6;0;No;No Report;Si;Customer related issue;No;No Report;0;0;No Report;
-24/11/24;9:07 AM;eBike;12,4;0;Si;Driver is not moving towards pickup location;No;No Report;No;No Report;0;0;No Report;
+﻿Date,Time,Booking ID,Booking Status,Customer ID,Vehicle Type,Pickup Location,Drop Location,Avg VTAT,Avg CTAT,Cancelled Rides by Customer,Reason for cancelling by Customer,Cancelled Rides by Driver,Driver Cancellation Reason,Incomplete Rides,Incomplete Rides Reason,Booking Value,Ride Distance,Driver Ratings,Customer Rating,Payment Method
+23/03/2024,12:29:38,CNR5884300,,CID1982111,eBike,PalamVihar,Jhilmil,0,0,0,NA,0,NA,0,NA,0,0,4.23,4.4,NA
+29/11/2024,18:01:39,CNR1326809,,CID4604802,GoSedan,ShastriNagar,GurgaonSector56,4.9,0,0,NA,0,NA,1,VehicleBreakdown,237,5.73,4.23,4.4,UPI
+23/08/2024,8:56:10,CNR8494506,,CID9202816,Auto,Khandsa,MalviyaNagar,13.4,0,0,NA,0,NA,0,NA,627,13.58,4.9,4.9,DebitCard
+21/10/2024,17:17:25,CNR8906825,,CID2610914,PremierSedan,CentralSecretariat,Inderlok,13.1,0,0,NA,0,NA,0,NA,416,34.02,4.6,5,UPI
+16/09/2024,22:08:00,CNR1950162,,CID9933542,Bike,GhitorniVillage,KhanMarket,5.3,0,0,NA,0,NA,0,NA,737,48.21,4.1,4.3,UPI
+6/02/2024,9:44:56,CNR4096693,,CID4670564,Auto,AIIMS,Narsinghpur,5.1,0,0,NA,0,NA,0,NA,316,4.85,4.1,4.6,UPI
+17/06/2024,15:45:58,CNR2002539,,CID6800553,GoMini,Vaishali,PunjabiBagh,7.1,0,0,NA,0,NA,0,NA,640,41.24,4,4.1,UPI
+19/03/2024,17:37:37,CNR6568000,,CID8610436,Auto,MayurVihar,CyberHub,12.1,0,0,NA,0,NA,0,NA,136,6.56,4.4,4.2,UPI
+14/09/2024,12:49:09,CNR4510807,,CID7873618,GoSedan,NoidaSector62,NoidaSector18,0,0,0,NA,0,NA,0,NA,0,0,4.23,4.4,NA
+16/12/2024,19:06:48,CNR7721892,,CID5214275,Auto,Rohini,AdarshNagar,6.1,0,0,NA,0,NA,1,OtherIssue,135,10.36,4.23,4.4,Cash
+14/06/2024,16:24:12,CNR9070334,,CID6680340,Auto,UdyogBhawan,DwarkaSector21,7.7,0,0,NA,0,NA,0,NA,181,19.84,4.2,4.9,Cash
+18/09/2024,8:09:38,CNR9551927,,CID7568143,Auto,VidhanSabha,AIIMS,0,0,0,NA,0,NA,0,NA,0,0,4.23,4.4,NA
+25/06/2024,22:44:15,CNR4386945,,CID5543520,eBike,PatelChowk,KherkiDaulaToll,4.6,0,0,NA,1,Personal&Carrelatedissues,0,NA,0,0,4.23,4.4,NA
+11/09/2024,19:29:39,CNR2987763,,CID2669710,GoMini,MalviyaNagar,GhitorniVillage,12.2,0,0,NA,0,NA,0,NA,394,21.44,4.1,4.7,UPI
+18/10/2024,18:28:53,CNR8962232,,CID1789354,GoMini,Madipur,GTBNagar,14,0,0,NA,0,NA,0,NA,836,39.55,4.7,4.4,UPI
+7/06/2024,15:05:35,CNR2390352,,CID5432215,Auto,JamaMasjid,KhanMarket,8.5,0,0,NA,0,NA,0,NA,410,34.76,4,4.9,UberWallet
+1/07/2024,10:51:16,CNR3221338,,CID2581698,PremierSedan,IGIAirport,Madipur,5.6,0,0,NA,0,NA,0,NA,401,21.97,4.9,4.3,UPI
+15/12/2024,15:08:25,CNR6739317,,CID8682675,GoSedan,Vinobapuri,GTBNagar,6,0,0,NA,1,Customerrelatedissue,0,NA,0,0,4.23,4.4,NA
