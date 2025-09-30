@@ -1,7 +1,3 @@
-# app_uber_pred.py
-# Streamlit app: Predicción de estado de reserva (Uber) basado en el modelo entrenado
-# Uso: streamlit run app_uber_pred.py
-
 import pickle
 
 import numpy as np
@@ -9,9 +5,6 @@ import pandas as pd
 import streamlit as st
 
 
-# -------------------------------
-# 1) Cargar modelo y metadatos
-# -------------------------------
 @st.cache_resource
 def load_model():
     try:
@@ -19,10 +12,9 @@ def load_model():
             open("modelo.pkl", "rb"))
     except Exception as e:
         st.error(
-            f"No pude cargar 'Modelo_Regresion_UBER.pkl'. Asegúrate de tener el archivo en la misma carpeta. Error: {e}")
+            f"No pude cargar 'modelo.pkl'. Asegúrate de tener el archivo en la misma carpeta. Error: {e}")
         st.stop()
 
-    # 'variables' puede venir como ndarray -> lo convertimos a lista de strings
     if hasattr(variables, "tolist"):
         variables = [str(v) for v in variables.tolist()]
     else:
@@ -95,10 +87,6 @@ def prepare_features(data: pd.DataFrame) -> pd.DataFrame:
     X = data_preparada.reindex(columns=variables, fill_value=0)
     return X
 
-
-# -------------------------------
-# 3) Entrada de datos
-# -------------------------------
 st.header("📥 Ingresar datos futuros")
 
 mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)

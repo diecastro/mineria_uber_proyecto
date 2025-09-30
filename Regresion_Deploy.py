@@ -1,7 +1,3 @@
-# app_uber_pred.py
-# Streamlit app: Predicción de estado de reserva (Uber) basado en el modelo entrenado
-# Uso: streamlit run app_uber_pred.py
-
 import pickle
 import numpy as np
 import pandas as pd
@@ -35,10 +31,6 @@ model, variables, min_max_scaler, classes = load_model()
 
 st.title("🚕 Predicción de 'Booking Status' (Uber) Regresión")
 st.caption("Despliegue rápido del modelo entrenado con GradientBoostingClassifier")
-
-# -------------------------------
-# 2) Funciones de preparación
-# -------------------------------
 
 PAGO_MAP = {
     "DebitCard": "Debit",
@@ -147,9 +139,6 @@ def prepare_features(df_raw: pd.DataFrame) -> pd.DataFrame:
     return X
 
 
-# -------------------------------
-# 3) Entrada de datos
-# -------------------------------
 st.header("📥 Ingresar datos futuros")
 
 mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)
