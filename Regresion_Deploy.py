@@ -14,13 +14,11 @@ def load_model():
         st.error(f"No pude cargar 'Modelo_Regresion_UBER.pkl'. Asegúrate de tener el archivo en la misma carpeta. Error: {e}")
         st.stop()
 
-    # 'variables' puede venir como ndarray -> lo convertimos a lista de strings
     if hasattr(variables, "tolist"):
         variables = [str(v) for v in variables.tolist()]
     else:
         variables = [str(v) for v in variables]
 
-    # Convertimos classes a lista de Python si es ndarray
     if hasattr(classes, "tolist"):
         classes = classes.tolist()
 
@@ -143,6 +141,13 @@ st.header("📥 Ingresar datos futuros")
 
 mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)
 
+with open("./data/BDUBERDatosFuturos.csv", "rb") as f:
+    st.download_button(
+        label="Descargar Plantilla De Ejemplo",
+        data=f,
+        file_name="plantilla_regresion.csv",
+        mime="text/csv"
+    )
 if mode == "📤 Subir CSV":
     file = st.file_uploader("Cargar CSV con el mismo esquema original (data.csv)", type=["csv"])
     if file is not None:

@@ -87,12 +87,21 @@ def prepare_features(data: pd.DataFrame) -> pd.DataFrame:
     X = data_preparada.reindex(columns=variables, fill_value=0)
     return X
 
+
 st.header("📥 Ingresar datos futuros")
 
-mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir CSV", "📝 Capturar 1 registro"], horizontal=True)
+mode = st.radio("¿Cómo quieres ingresar los datos?", ["📤 Subir Archivo", "📝 Capturar 1 registro"], horizontal=True)
 
-if mode == "📤 Subir CSV":
-    file = st.file_uploader("Cargar Archivo con el mismo esquema original", type=["csv", "xlsx","xls"])
+with open("./data/BDUBERDatosFuturos.xlsx", "rb") as f:
+    st.download_button(
+        label="Descargar Plantilla De Ejemplo",
+        data=f,
+        file_name="plantilla_clasificacion.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+
+if mode == "📤 Subir Archivo":
+    file = st.file_uploader("Cargar Archivo con el mismo esquema original", type=["csv", "xlsx", "xls"])
     if file is not None:
         try:
             df_raw = pd.read_excel(file)
